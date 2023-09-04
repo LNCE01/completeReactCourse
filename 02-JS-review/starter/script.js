@@ -142,3 +142,35 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
+
+const book = getBook(2);
+
+//Destructuring an object
+const {
+  title,
+  author,
+  genres,
+  reviews: {
+    goodreads: { rating: reviewsRatings },
+  },
+} = book;
+console.log(
+  `The title of book number 2 is: ${title} by: ${author} The Ratings are: ${reviewsRatings}`
+);
+
+//For of
+for (const {
+  id: order,
+  title,
+  reviews: {
+    goodreads: { ratingsCount: ratingCount },
+  },
+} of data) {
+  console.log(
+    `The title of the book number ${order} is ${title}. The count of ratings are: ${ratingCount}`
+  );
+}
+
+//Destructuring array
+const [primaryGenre, secondaryGenre] = genres;
+console.log(primaryGenre, secondaryGenre);
