@@ -171,6 +171,8 @@ for (const {
   );
 }
 
+//Unpacking properties from objects passed as a function parameter
+
 //Destructuring array
 const [primaryGenre, secondaryGenre] = genres;
 console.log(primaryGenre, secondaryGenre);
